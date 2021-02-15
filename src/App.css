@@ -1,0 +1,23 @@
+* {
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+body {
+    background-color: rgb(10, 10, 10);
+    color: rgb(210, 210, 210);
+}
+
+.SatList {
+    display: flex;
+    flex-flow: column;
+    width: 30%;
+}
+
+header {
+    border-bottom: 1px solid black;
+}
+
+.SatList-item {
+    border: 1px solid white;
+}
