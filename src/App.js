@@ -1,9 +1,12 @@
+import SatList from "./components/SatList"
+
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <span>-Satelites App-</span>
+        <span>-Satellites App-</span>
       </header>
+      <SatList />
     </div>
   );
 }
