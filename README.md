@@ -1,2 +1,2 @@
-# Satelites
-- Satelites information App
+# Satellites
+- Satellites information App
