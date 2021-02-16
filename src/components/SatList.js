@@ -16,12 +16,26 @@ function SatList({ satList, isFetching, error, getSatList }) {
 
     return (
         <div className="SatList">
+            <h2>All Satellites</h2>
             {satList.map(item => {
                 return (
-                    <div className="SatList-item" key={item.number}>
-                        <p>Name: {item.name}</p>
-                        <p>Number: {item.number}</p>
-                        <p>Country {item.country}</p>
+                    <div className="SatList-item">
+                        <div className="SatList-item-key" key={item.number}>
+                            <p>Name: </p>
+                            <p>Number: </p>
+                            <p>Country: </p>
+                            <p>Classification: </p>
+                            <p>Size: </p>
+                            <p>Type: </p>
+                        </div>
+                        <div className="SatList-item-value" >
+                            <p>{item.name}</p>
+                            <p>{item.number}</p>
+                            <p>{item.country}</p>
+                            <p>{item.classification}</p>
+                            <p>{item.size}</p>
+                            <p>{item.type}</p>
+                        </div>
                     </div>
                 )
             })}

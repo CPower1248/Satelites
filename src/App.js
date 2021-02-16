@@ -8,7 +8,9 @@ function App() {
       <header>
         <span>-Satellites App-</span>
       </header>
-      <SatList />
+      <div className="Components-container">
+        <SatList />
+      </div>
     </div>
   );
 }
