@@ -6,6 +6,7 @@ import {
 
 export const initialState = {
     satList: [],
+    resList: [],
     isFetching: false,
     error: ""
 }

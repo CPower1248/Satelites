@@ -28,6 +28,14 @@ function SatList({ satList, isFetching, error, getSatList }) {
                             <p>Size: </p>
                             <p>Type: </p>
                         </div>
+                        <div className="Divider">
+                            <p>-</p>
+                            <p>-</p>
+                            <p>-</p>
+                            <p>-</p>
+                            <p>-</p>
+                            <p>-</p>
+                        </div>
                         <div className="SatList-item-value" >
                             <p>{item.name}</p>
                             <p>{item.number}</p>
