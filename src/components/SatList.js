@@ -16,33 +16,36 @@ function SatList({ satList, isFetching, error, getSatList }) {
 
     return (
         <div className="SatList">
-            <h2>All Satellites</h2>
+            <p id="SatList-p">Satellite List:</p>
             {satList.map(item => {
                 return (
                     <div className="SatList-item">
-                        <div className="SatList-item-key" key={item.number}>
+                        <div className="SatList-item-key">
                             <p>Name: </p>
-                            <p>Number: </p>
-                            <p>Country: </p>
-                            <p>Classification: </p>
-                            <p>Size: </p>
-                            <p>Type: </p>
                         </div>
                         <div className="Divider">
                             <p>-</p>
-                            <p>-</p>
-                            <p>-</p>
-                            <p>-</p>
-                            <p>-</p>
+                        </div>
+                        <div className="SatList-item-value">
+                            <p>{item.name}</p>
+                        </div>
+                        <div className="SatList-item-key">
+                            <p>Number: </p>
+                        </div>
+                        <div className="Divider">
                             <p>-</p>
                         </div>
-                        <div className="SatList-item-value" >
-                            <p>{item.name}</p>
+                        <div className="SatList-item-value">
                             <p>{item.number}</p>
+                        </div>
+                        <div className="SatList-item-key">
+                            <p>Country: </p>
+                        </div>
+                        <div className="Divider">
+                            <p>-</p>
+                        </div>
+                        <div className="SatList-item-value">
                             <p>{item.country}</p>
-                            <p>{item.classification}</p>
-                            <p>{item.size}</p>
-                            <p>{item.type}</p>
                         </div>
                     </div>
                 )

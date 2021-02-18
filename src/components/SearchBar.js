@@ -2,7 +2,7 @@ import { Requests as Reqs } from "../store/requests"
 
 function SearchBar() {
     return (
-        <div className="SearchBar">
+        <div className="SearchBar-container">
             <h1>-searchbar-</h1>
         </div>
     )

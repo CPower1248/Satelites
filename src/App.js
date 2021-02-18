@@ -4,6 +4,7 @@ import "./App.css"
 
 import SatList from "./components/SatList"
 import SearchBar from "./components/SearchBar"
+import SatCard from "./components/SatCard"
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <span>-Satellites App-</span>
       </header>
       <div className="Components-container">
+        <SatCard />
         <SearchBar />
         <SatList />
       </div>

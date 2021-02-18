@@ -1,3 +1,5 @@
+/***** OVERALL *****/
+
 * {
     box-sizing: border-box;
     max-width: 100%;
@@ -8,6 +10,8 @@ body {
     color: rgb(225, 225, 225);
 }
 
+/***** COMPONENTS *****/
+
 .Components-container {
     display: flex;
     justify-content: flex-end;
@@ -17,6 +21,8 @@ body {
     border-radius: 10px;
 }
 
+/***** SATLIST *****/
+
 .SatList {
     display: flex;
     flex-flow: column;
@@ -24,38 +30,57 @@ body {
     border-left: 5px solid rgba(0, 25, 50, 0.75);
     background-color: rgba(0, 25, 50, 0.25);
     padding: 1% 2%;
-    line-height: 3px;
-    width: 31%;
+    width: 25%;
+    line-height: 0px;
     letter-spacing: 1px;
 }
 
-.SatList h2 {
+#SatList-p {
     text-decoration: underline;
 }
 
 .SatList-item {
     display: flex;
     justify-content: space-between;
-    border: 5px solid rgba(0, 25, 50, 0.25);
+    flex-wrap: wrap;
+    border: 5px solid rgba(0, 10, 20, 0.25);
     background-color: rgba(75, 75, 75, 0.75);
     margin: 2%;
-    padding: 1%;
     border-radius: 5px;
     width: 100%;
     box-shadow: 15px 15px 25px -4px rgba(20, 20, 20, 0.75);
 }
 
-/* .SatList-item-key {
-    border: 1px solid red;
-} */
+.SatList-item-key {
+    width: 50%;
+    /* border: 1px solid red; */
+}
 
-/* .Divider {
-    border: 1px solid green;
-} */
+.Divider {
+    flex-grow: 1;
+    /* border: 1px solid green; */
+}
 
 .SatList-item-value {
     text-align: end;
-    width: 50%;
+    width: 100%;
     font-weight: bold;
     /* border: 1px solid blue; */
+}
+
+/***** SEARCHBAR *****/
+
+.SearchBar-container {
+    flex-grow: 1;
+    text-align: center;
+    justify-content: center;
+}
+
+/***** SATCARD *****/
+
+.SatCard {
+    text-align: center;
+    width: 45%;
+    border-right: 5px solid rgba(0, 25, 50, 0.75);
+    background-color: rgba(0, 25, 50, 0.25);
 }
