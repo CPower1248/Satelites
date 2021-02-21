@@ -6,81 +6,107 @@
 }
 
 body {
-    background-color: black;
-    color: rgb(225, 225, 225);
+    background-color: rgb(0, 0, 0);
+    color: lightgrey;
+    text-align: center;
 }
 
 /***** COMPONENTS *****/
 
 .Components-container {
     display: flex;
-    justify-content: flex-end;
-    border: 5px solid rgba(0, 25, 50, 0.75);
-    background-color: rgba(0, 25, 50, 0.15);
-    margin: 2% 0%;
-    border-radius: 10px;
-}
-
-/***** SATLIST *****/
-
-.SatList {
-    display: flex;
     flex-flow: column;
-    align-items: center;
-    border-left: 5px solid rgba(0, 25, 50, 0.75);
-    background-color: rgba(0, 25, 50, 0.25);
-    padding: 1% 2%;
-    width: 25%;
-    line-height: 0px;
-    letter-spacing: 1px;
+    justify-content: flex-end;
+    border-top: 5px double darkslateblue;
+    border-left: 5px double darkslateblue;
+    border-radius: 10px;
+    padding: 1% 0% 0% 1%;
 }
 
-#SatList-p {
-    text-decoration: underline;
-}
-
-.SatList-item {
+.Sat-container {
     display: flex;
+    flex-flow: row;
     justify-content: space-between;
-    flex-wrap: wrap;
-    border: 5px solid rgba(0, 10, 20, 0.25);
-    background-color: rgba(75, 75, 75, 0.75);
-    margin: 2%;
-    border-radius: 5px;
     width: 100%;
-    box-shadow: 15px 15px 25px -4px rgba(20, 20, 20, 0.75);
-}
-
-.SatList-item-key {
-    width: 50%;
-    /* border: 1px solid red; */
-}
-
-.Divider {
-    flex-grow: 1;
-    /* border: 1px solid green; */
-}
-
-.SatList-item-value {
-    text-align: end;
-    width: 100%;
-    font-weight: bold;
-    /* border: 1px solid blue; */
+    padding: 1% 0% 0% 0%;
 }
 
 /***** SEARCHBAR *****/
 
 .SearchBar-container {
-    flex-grow: 1;
+    border-top: 5px double darkslategray;
+    border-right: 5px double darkslategray;
+    border-radius: 10px;
+}
+
+.SearchBar-container input {
+    width: 30%;
     text-align: center;
-    justify-content: center;
+    background-color: black;
+    border-radius: 10px;
+    color: lightgrey;
+    line-height: 20px;
 }
 
 /***** SATCARD *****/
 
-.SatCard {
+.SatCard-container {
     text-align: center;
-    width: 45%;
-    border-right: 5px solid rgba(0, 25, 50, 0.75);
-    background-color: rgba(0, 25, 50, 0.25);
+    border-top: 5px double slategrey;
+    border-right: 5px double slategrey;
+    border-radius: 10px;
+    width: 39%;
+}
+
+/***** SATLIST *****/
+
+.SatList-container {
+    display: flex;
+    flex-flow: column;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    border-top: 5px double slategrey;
+    border-right: 5px double slategrey;
+    border-radius: 10px;
+    width: 60%;
+}
+
+.SatList-search input {
+    width: 50%;
+    text-align: center;
+    background-color: black;
+    border-radius: 10px;
+    color: lightgrey;
+    line-height: 20px;
+}
+
+.SatList-items-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.SatList-item {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgba(175, 200, 225, .01);
+    border-top: 3px double slateblue;
+    border-right: 3px double slateblue;
+    border-radius: 10px;
+    width: 48%;
+    margin: 1% 1% 0% 0%;
+    padding: 0% 1%;
+    line-height: 5px;
+}
+
+.SatList-item-key {
+    text-align: start;
+    width: 20%;
+    /* border: 1px solid red; */
+}
+
+.SatList-item-value {
+    text-align: end;
+    width: 80%;
+    font-weight: bold;
+    /* border: 1px solid blue; */
 }

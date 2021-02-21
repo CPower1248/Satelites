@@ -9,13 +9,15 @@ import SatCard from "./components/SatCard"
 function App() {
   return (
     <div className="App">
-      <header>
-        <span>-Satellites App-</span>
-      </header>
       <div className="Components-container">
-        <SatCard />
+        <header>
+          <span>-Satellites App-</span>
+        </header>
         <SearchBar />
-        <SatList />
+        <div className="Sat-container">
+          <SatCard />
+          <SatList />
+        </div>
       </div>
     </div>
   );

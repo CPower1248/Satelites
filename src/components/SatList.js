@@ -15,41 +15,37 @@ function SatList({ satList, isFetching, error, getSatList }) {
     }
 
     return (
-        <div className="SatList">
-            <p id="SatList-p">Satellite List:</p>
-            {satList.map(item => {
-                return (
-                    <div className="SatList-item">
-                        <div className="SatList-item-key">
-                            <p>Name: </p>
+        <div className="SatList-container">
+            <div className="SatList-search">
+                <h1>Satellite List</h1>
+                <input name="ListSearch" placeholder="Search for satellites by name, number or country" />
+            </div>
+            <div className="SatList-items-container">
+                {satList.map(item => {
+                    return (
+                        <div className="SatList-item">
+                            <div className="SatList-item-key">
+                                <p>Name: </p>
+                            </div>
+                            <div className="SatList-item-value">
+                                <p>{item.name}</p>
+                            </div>
+                            <div className="SatList-item-key">
+                                <p>Number: </p>
+                            </div>
+                            <div className="SatList-item-value">
+                                <p>{item.number}</p>
+                            </div>
+                            <div className="SatList-item-key">
+                                <p>Country: </p>
+                            </div>
+                            <div className="SatList-item-value">
+                                <p>{item.country}</p>
+                            </div>
                         </div>
-                        <div className="Divider">
-                            <p>-</p>
-                        </div>
-                        <div className="SatList-item-value">
-                            <p>{item.name}</p>
-                        </div>
-                        <div className="SatList-item-key">
-                            <p>Number: </p>
-                        </div>
-                        <div className="Divider">
-                            <p>-</p>
-                        </div>
-                        <div className="SatList-item-value">
-                            <p>{item.number}</p>
-                        </div>
-                        <div className="SatList-item-key">
-                            <p>Country: </p>
-                        </div>
-                        <div className="Divider">
-                            <p>-</p>
-                        </div>
-                        <div className="SatList-item-value">
-                            <p>{item.country}</p>
-                        </div>
-                    </div>
-                )
-            })}
+                    )
+                })}
+            </div>
         </div>
     )
 }
