@@ -2,16 +2,16 @@ import { useEffect } from "react"
 import { connect } from "react-redux"
 import { getSatList } from "../store/actions"
 
-function SatList({ satList, isFetching, error, getSatList }) {
+function SatList({ satList, isFetchingList, errorList, getSatList }) {
     useEffect(() => {
         getSatList()
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
     
-    if (isFetching) {
+    if (isFetchingList) {
         return <h2>Fetching Satellite List</h2>
-    } else if (error) {
-        return <h2>Err: {error}</h2>
+    } else if (errorList) {
+        return <h2>Err: {errorList}</h2>
     }
 
     return (
@@ -53,8 +53,8 @@ function SatList({ satList, isFetching, error, getSatList }) {
 const mapStateToProps = state => {
     return ({
         satList: state.satList,
-        isFetching: state.isFetching,
-        error: state.error
+        isFetchingList: state.isFetchingList,
+        errorList: state.errorList
     })
 }
 

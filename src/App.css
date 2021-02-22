@@ -11,6 +11,10 @@ body {
     text-align: center;
 }
 
+a {
+    color: lightslategrey;
+}
+
 /***** COMPONENTS *****/
 
 .Components-container {
@@ -55,7 +59,79 @@ body {
     border-top: 5px double slategrey;
     border-right: 5px double slategrey;
     border-radius: 10px;
+    padding: 0% 1% 0% 0%;
     width: 39%;
+}
+
+.SatCard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    background-color: rgba(175, 200, 225, .01);
+    border-top: 3px double slateblue;
+    border-right: 3px double slateblue;
+    border-radius: 10px;
+    width: 100%;
+    padding: 0% 1%;
+    line-height: 5px;
+}
+
+.SatCard-key {
+    text-align: start;
+    width: 21%;
+    /* border: 1px solid red; */
+}
+
+.SatCard-key-description {
+    text-align: start;
+    width: 100%;
+    /* border: 1px solid red; */
+}
+
+.SatCard-key-learn-more {
+    text-align: start;
+    width: 100%;
+    /* border: 1px solid red; */
+}
+
+.SatCard-value {
+    text-align: end;
+    width: 79%;
+    font-weight: bold;
+    /* border: 1px solid blue; */
+}
+
+.SatCard-value-description {
+    text-align: start;
+    width: 90%;
+    line-height: 22px;
+    border-top: 3px double slategrey;
+    border-right: 3px double slategrey;
+    border-radius: 10px;
+    padding: 1% 1% 0% 1%;
+}
+
+.SatCard-link-item {
+    /* border: 1px solid blue; */
+    width: 90%;
+    border-top: 3px double slategrey;
+    border-right: 3px double slategrey;
+    border-radius: 10px;
+    text-overflow: ellipsis;
+}
+
+.SatCard-link-item-key {
+    text-decoration: underline;
+    /* border: 1px solid green; */
+}
+
+.SatCard-link-item-value {
+    display: flex;
+    justify-content: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* border: 1px solid red; */
 }
 
 /***** SATLIST *****/

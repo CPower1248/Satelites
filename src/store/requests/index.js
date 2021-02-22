@@ -14,7 +14,7 @@ export const Requests = {
     },
     satByNumber: {
         method: 'GET',
-        url: `https://uphere-space1.p.rapidapi.com/satellite/43226/details`,
+        url: `https://uphere-space1.p.rapidapi.com/satellite/25544/details`,
         headers: {
           'x-rapidapi-key': API_KEY,
           'x-rapidapi-host': 'uphere-space1.p.rapidapi.com'

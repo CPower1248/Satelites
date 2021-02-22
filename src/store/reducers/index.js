@@ -1,14 +1,19 @@
 import { 
     FETCH_SATLIST_START,
     FETCH_SATLIST_SUCCESS,
-    FETCH_SATLIST_FAILURE 
+    FETCH_SATLIST_FAILURE,
+    FETCH_SATBYNUMBER_START,
+    FETCH_SATBYNUMBER_SUCCESS,
+    FETCH_SATBYNUMBER_FAILURE
 } from "../actions"
 
 export const initialState = {
     satList: [],
-    resList: [],
-    isFetching: false,
-    error: ""
+    isFetchingList: false,
+    errorList: "",
+    satCard: {},
+    isFetchingCard: false,
+    errorCard: ""
 }
 
 export const reducer = (state = initialState, action) => {
@@ -16,21 +21,39 @@ export const reducer = (state = initialState, action) => {
         case FETCH_SATLIST_START:
             return ({
                 ...state,
-                isFetching: true,
-                error: ""
+                isFetchingList: true,
+                errorList: ""
             })
         case FETCH_SATLIST_SUCCESS:
             return ({
                 ...state,
-                isFetching: false,
+                isFetchingList: false,
                 satList: action.payload
             })
         case FETCH_SATLIST_FAILURE:
             return ({
                 ...state,
-                isFetching: false,
-                error: action.payload
+                isFetchingList: false,
+                errorList: action.payload
             })
+        case FETCH_SATBYNUMBER_START:
+            return ({
+                ...state,
+                isFetchingCard: true,
+                errorCard: ""
+            })
+        case FETCH_SATBYNUMBER_SUCCESS:
+            return ({
+                ...state,
+                isFetchingCard: false,
+                satCard: action.payload
+            })
+        case FETCH_SATBYNUMBER_FAILURE:
+            return ({
+                ...state,
+                isFetchingCard: false,
+                errorCard: action.payload
+            })        
         default:
             return state
     }
