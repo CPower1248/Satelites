@@ -6,6 +6,8 @@ import SatList from "./components/SatList"
 import SearchBar from "./components/SearchBar"
 import SatCard from "./components/SatCard"
 
+require("dotenv").config()
+
 function App() {
   return (
     <div className="App">

@@ -23,7 +23,7 @@ function SatList({ satList, isFetching, error, getSatList }) {
             <div className="SatList-items-container">
                 {satList.map(item => {
                     return (
-                        <div className="SatList-item">
+                        <div className="SatList-item" key={item.number}>
                             <div className="SatList-item-key">
                                 <p>Name: </p>
                             </div>
