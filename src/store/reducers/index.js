@@ -13,7 +13,12 @@ export const initialState = {
     errorList: "",
     satCard: {},
     isFetchingCard: false,
-    errorCard: ""
+    errorCard: "",
+    search: {
+        number: "",
+        name: "",
+        country: ""
+    }
 }
 
 export const reducer = (state = initialState, action) => {
@@ -21,6 +26,7 @@ export const reducer = (state = initialState, action) => {
         case FETCH_SATLIST_START:
             return ({
                 ...state,
+                
                 isFetchingList: true,
                 errorList: ""
             })

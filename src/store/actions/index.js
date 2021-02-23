@@ -19,7 +19,7 @@ export const getSatList = () => dispatch=> {
       })
       .catch(err => {
         dispatch({type: FETCH_SATLIST_FAILURE, payload: err.message})
-      })
+      })      
 }
 
 export const getSatByNumber = () => dispatch=> {

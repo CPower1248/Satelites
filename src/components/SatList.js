@@ -18,7 +18,6 @@ function SatList({ satList, isFetchingList, errorList, getSatList }) {
         <div className="SatList-container">
             <div className="SatList-search">
                 <h1>Satellite List</h1>
-                <input name="ListSearch" placeholder="Search for satellites by name, number or country" />
             </div>
             <div className="SatList-items-container">
                 {satList.map(item => {
@@ -52,6 +51,8 @@ function SatList({ satList, isFetchingList, errorList, getSatList }) {
 
 const mapStateToProps = state => {
     return ({
+        counter: state.counter,
+        initialFetch: state.initialFetch,
         satList: state.satList,
         isFetchingList: state.isFetchingList,
         errorList: state.errorList

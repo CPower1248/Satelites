@@ -13,6 +13,7 @@ body {
 
 a {
     color: lightslategrey;
+    text-decoration: none;
 }
 
 /***** COMPONENTS *****/
@@ -38,18 +39,49 @@ a {
 /***** SEARCHBAR *****/
 
 .SearchBar-container {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
     border-top: 5px double darkslategray;
     border-right: 5px double darkslategray;
     border-radius: 10px;
 }
 
+/* .SearchBar-title {
+    border: 1px solid red;
+} */
+
+.SearchBar {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    /* border: 1px solid yellow; */
+}
+
 .SearchBar-container input {
-    width: 30%;
+    width: 22vw;
     text-align: center;
     background-color: black;
     border-radius: 10px;
     color: lightgrey;
     line-height: 20px;
+    /* border: 1px solid pink; */
+}
+
+.SearchBar-a {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    width: 40%;
+    /* border: 1px solid green; */
+}
+
+.SearchBar-b {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-evenly;
+    width: 60%;
+    /* border: 1px solid blue; */
 }
 
 /***** SATCARD *****/
@@ -76,9 +108,13 @@ a {
     line-height: 5px;
 }
 
+#no-satCard {
+    justify-content: center;
+}
+
 .SatCard-key {
     text-align: start;
-    width: 21%;
+    width: 25%;
     /* border: 1px solid red; */
 }
 
@@ -96,7 +132,7 @@ a {
 
 .SatCard-value {
     text-align: end;
-    width: 79%;
+    width: 75%;
     font-weight: bold;
     /* border: 1px solid blue; */
 }
@@ -140,7 +176,7 @@ a {
     display: flex;
     flex-flow: column;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    /* justify-content: space-evenly; */
     border-top: 5px double slategrey;
     border-right: 5px double slategrey;
     border-radius: 10px;
