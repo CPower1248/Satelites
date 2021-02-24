@@ -175,12 +175,10 @@ a {
 .SatList-container {
     display: flex;
     flex-flow: column;
-    flex-wrap: wrap;
-    /* justify-content: space-evenly; */
     border-top: 5px double slategrey;
     border-right: 5px double slategrey;
     border-radius: 10px;
-    width: 60%;
+    width: 100%;
 }
 
 .SatList-search input {
@@ -195,16 +193,17 @@ a {
 .SatList-items-container {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-evenly;
 }
 
 .SatList-item {
     display: flex;
     flex-wrap: wrap;
-    background-color: rgba(175, 200, 225, .01);
+    background-color: rgba(175, 200, 225, .05);
     border-top: 3px double slateblue;
     border-right: 3px double slateblue;
     border-radius: 10px;
-    width: 48%;
+    width: 30%;
     margin: 1% 1% 0% 0%;
     padding: 0% 1%;
     line-height: 5px;

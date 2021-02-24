@@ -1,6 +1,6 @@
 import { connect } from "react-redux"
 
-function SearchBar({ searchSingle }) {
+function SearchBar({ number, name, country }) {
 
 
     return (
