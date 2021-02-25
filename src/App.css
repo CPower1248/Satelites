@@ -16,9 +16,9 @@ a {
     text-decoration: none;
 }
 
-/***** COMPONENTS *****/
+/***** APP *****/
 
-.Components-container {
+.App {
     display: flex;
     flex-flow: column;
     justify-content: flex-end;
@@ -26,14 +26,45 @@ a {
     border-left: 5px double darkslateblue;
     border-radius: 10px;
     padding: 1% 0% 0% 1%;
+    /* border: 1px solid red; */
 }
 
-.Sat-container {
+/***** NavBar *****/
+
+.NavBar {
     display: flex;
-    flex-flow: row;
-    justify-content: space-between;
-    width: 100%;
-    padding: 1% 0% 0% 0%;
+    justify-content: space-evenly;
+    font-size: x-large;
+    line-height: 40px;
+    letter-spacing: 4px;
+    font-weight: bold;
+    border-top: 3px double darkslategray;
+    border-right: 3px double darkslategray;
+    border-radius: 10px;
+    margin-bottom: 1%;
+    /* border: 1px solid green; */
+}
+
+.Nav-list {
+    width: 50%;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.Nav-list:hover {
+    background-color: rgba(47, 79, 79, .65);
+    transition: .3s;
+}
+
+.Nav-details {
+    width: 50%;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.Nav-details:hover {
+    background-color: rgba(47, 79, 79, .65);
+    transition: .3s;
 }
 
 /***** SEARCHBAR *****/
@@ -42,8 +73,8 @@ a {
     display: flex;
     flex-flow: column;
     align-items: center;
-    border-top: 5px double darkslategray;
-    border-right: 5px double darkslategray;
+    border-top: 3px double darkslategray;
+    border-right: 3px double darkslategray;
     border-radius: 10px;
 }
 
@@ -52,14 +83,12 @@ a {
 } */
 
 .SearchBar {
-    display: flex;
-    justify-content: space-between;
     width: 100%;
     /* border: 1px solid yellow; */
 }
 
 .SearchBar-container input {
-    width: 22vw;
+    width: 30vw;
     text-align: center;
     background-color: black;
     border-radius: 10px;
@@ -71,45 +100,94 @@ a {
 .SearchBar-a {
     display: flex;
     flex-flow: row;
-    justify-content: center;
-    width: 40%;
+    justify-content: space-evenly;
     /* border: 1px solid green; */
 }
 
-.SearchBar-b {
+/* .SearchBar-b {
+    border: 1px solid blue;
+} */
+
+/***** SATELLITE CONTAINER *****/
+
+.Sat-container {
     display: flex;
     flex-flow: row;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1% 0% 0% 0%;
+    /* border: 1px solid red; */
+}
+
+/***** SATLIST *****/
+
+.SatList-container {
+    display: flex;
+    flex-flow: column;
+    border-top: 5px double slategrey;
+    border-right: 5px double slategrey;
+    border-radius: 10px;
+    width: 100%;
+}
+
+.SatList-items-container {
+    display: flex;
+    flex-wrap: wrap;
     justify-content: space-evenly;
-    width: 60%;
+}
+
+.SatList-item {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgba(175, 200, 225, .04);
+    border-top: 10px double slateblue;
+    border-right: 10px double slateblue;
+    border-radius: 10px;
+    width: 30%;
+    margin: 1% 1% 0% 0%;
+    padding: 0% 1%;
+    line-height: 5px;
+    font-size: large;
+}
+
+.SatList-item-key {
+    text-align: start;
+    width: 20%;
+    /* border: 1px solid red; */
+}
+
+.SatList-item-value {
+    text-align: end;
+    width: 80%;
+    font-weight: bold;
     /* border: 1px solid blue; */
 }
 
 /***** SATCARD *****/
 
 .SatCard-container {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
     text-align: center;
     border-top: 5px double slategrey;
     border-right: 5px double slategrey;
     border-radius: 10px;
     padding: 0% 1% 0% 0%;
-    width: 39%;
+    font-size: larger;
 }
 
 .SatCard {
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-end;
-    background-color: rgba(175, 200, 225, .01);
-    border-top: 3px double slateblue;
-    border-right: 3px double slateblue;
-    border-radius: 10px;
-    width: 100%;
-    padding: 0% 1%;
-    line-height: 5px;
-}
-
-#no-satCard {
     justify-content: center;
+    background-color: rgba(175, 200, 225, .04);
+    border-top: 10px double slateblue;
+    border-right: 10px double slateblue;
+    border-radius: 10px;
+    width: 75%;
+    padding: 4% 10%;
+    line-height: 18px;
 }
 
 .SatCard-key {
@@ -139,21 +217,22 @@ a {
 
 .SatCard-value-description {
     text-align: start;
-    width: 90%;
-    line-height: 22px;
-    border-top: 3px double slategrey;
-    border-right: 3px double slategrey;
+    width: 100%;
+    line-height: 24px;
+    border-top: 4px double slategrey;
+    border-right: 4px double slategrey;
     border-radius: 10px;
     padding: 1% 1% 0% 1%;
 }
 
 .SatCard-link-item {
-    /* border: 1px solid blue; */
-    width: 90%;
+    width: 75%;
     border-top: 3px double slategrey;
     border-right: 3px double slategrey;
     border-radius: 10px;
+    line-height: 1px;
     text-overflow: ellipsis;
+    /* border: 1px solid blue; */
 }
 
 .SatCard-link-item-key {
@@ -168,56 +247,4 @@ a {
     overflow: hidden;
     text-overflow: ellipsis;
     /* border: 1px solid red; */
-}
-
-/***** SATLIST *****/
-
-.SatList-container {
-    display: flex;
-    flex-flow: column;
-    border-top: 5px double slategrey;
-    border-right: 5px double slategrey;
-    border-radius: 10px;
-    width: 100%;
-}
-
-.SatList-search input {
-    width: 50%;
-    text-align: center;
-    background-color: black;
-    border-radius: 10px;
-    color: lightgrey;
-    line-height: 20px;
-}
-
-.SatList-items-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-}
-
-.SatList-item {
-    display: flex;
-    flex-wrap: wrap;
-    background-color: rgba(175, 200, 225, .05);
-    border-top: 3px double slateblue;
-    border-right: 3px double slateblue;
-    border-radius: 10px;
-    width: 30%;
-    margin: 1% 1% 0% 0%;
-    padding: 0% 1%;
-    line-height: 5px;
-}
-
-.SatList-item-key {
-    text-align: start;
-    width: 20%;
-    /* border: 1px solid red; */
-}
-
-.SatList-item-value {
-    text-align: end;
-    width: 80%;
-    font-weight: bold;
-    /* border: 1px solid blue; */
 }
