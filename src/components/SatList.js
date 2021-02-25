@@ -1,8 +1,8 @@
 import { useEffect } from "react"
 import { connect } from "react-redux"
-import { getSatList } from "../store/actions"
+import { getSatList, getSatByNumber } from "../store/actions"
 
-function SatList({ satList, isFetchingList, errorList, getSatList }) {
+function SatList({ satList, isFetchingList, errorList, number, getSatList, getSatByNumber }) {
     useEffect(() => {
         getSatList()
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -18,7 +18,6 @@ function SatList({ satList, isFetchingList, errorList, getSatList }) {
         <div className="SatList-container">
             <div className="SatList-search">
                 <h1>Satellite List</h1>
-                <input name="ListSearch" placeholder="Search for satellites by name, number or country" />
             </div>
             <div className="SatList-items-container">
                 {satList.map(item => {
@@ -52,10 +51,15 @@ function SatList({ satList, isFetchingList, errorList, getSatList }) {
 
 const mapStateToProps = state => {
     return ({
+        counter: state.counter,
+        initialFetch: state.initialFetch,
         satList: state.satList,
         isFetchingList: state.isFetchingList,
-        errorList: state.errorList
+        errorList: state.errorList,
+        search: {
+            number: state.search.number
+        }
     })
 }
 
-export default connect(mapStateToProps, { getSatList })(SatList)
+export default connect(mapStateToProps, { getSatList, getSatByNumber })(SatList)

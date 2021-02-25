@@ -3,16 +3,19 @@ import { connect } from "react-redux"
 import { getSatByNumber } from "../store/actions"
 
 function SatCard({ satCard, isFetchingCard, errorCard, getSatByNumber }) {
-    console.log(satCard)
-    useEffect(() => {
-        getSatByNumber()
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])
-
     if (isFetchingCard) {
         return <h2>Fetching Satellite Card</h2>
     } else if (errorCard) {
         return <h2>Err: {errorCard}</h2>
+    } else if (!satCard.name) {
+        return (
+            <div className="SatCard-container">
+                <h1>Satellite Details</h1>
+                <div className="SatCard" id="no-satCard">
+                    <h2>Select a satellite to view details</h2>
+                </div>
+            </div>
+        )
     }
 
     return (
