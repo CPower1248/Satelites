@@ -1,10 +1,10 @@
 import { useEffect } from "react"
 import { connect } from "react-redux"
-import { getSatList, getSatByNumber } from "../store/actions"
+import { fetchSatList, fetchSatByNumber } from "../store/actions"
 
-function SatList({ satList, isFetchingList, errorList, number, getSatList, getSatByNumber }) {
+function SatList({ satList, isFetchingList, errorList, number, fetchSatList, fetchSatByNumber }) {
     useEffect(() => {
-        getSatList()
+        fetchSatList()
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
     
@@ -62,4 +62,4 @@ const mapStateToProps = state => {
     })
 }
 
-export default connect(mapStateToProps, { getSatList, getSatByNumber })(SatList)
+export default connect(mapStateToProps, { fetchSatList, fetchSatByNumber })(SatList)

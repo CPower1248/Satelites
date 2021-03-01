@@ -1,12 +1,9 @@
-import { connect } from "react-redux"
 import { Switch, Route } from "react-router-dom"
 
 import SearchList from "./SearchList"
 import SearchCard from "./SearchCard"
 
-function SearchBar({ number, name, country }) {
-
-
+function SearchBar() {
     return (
         <div className="SearchBar-container">
             <div className="SearchBar-title">
@@ -15,7 +12,7 @@ function SearchBar({ number, name, country }) {
             <div className="SearchBar">
                 <Switch>
                     <Route exact path="/" component={SearchList}/>
-                    <SearchCard exact path="/details" component={SearchCard}/>
+                    <Route exact path="/details" component={SearchCard}/>
                 </Switch>
             </div>
         </div>
@@ -23,14 +20,4 @@ function SearchBar({ number, name, country }) {
     )
 }
 
-const mapStateToProps = state => {
-    return ({
-        search: {
-            number: state.search.number,
-            name: state.search.name,
-            country: state.search.country
-        }
-    })
-}
-
-export default connect(mapStateToProps, {})(SearchBar)
+export default SearchBar

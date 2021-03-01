@@ -1,4 +1,6 @@
-function SearchCard() {
+import { connect } from "react-redux"
+
+function SearchCard({ number }) {
     return (
     <div className="SearchBar-b">
             <div className="SearchNumber">
@@ -8,4 +10,12 @@ function SearchCard() {
     )
 }
 
-export default SearchCard
+const mapStateToProps = state => {
+    return ({
+        search: {
+            number: state.search.number
+        }
+    })
+}
+
+export default connect(mapStateToProps, {})(SearchCard)
