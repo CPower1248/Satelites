@@ -1,4 +1,6 @@
-function SearchList() {
+import { connect } from "react-redux"
+
+function SearchList({ name, country }) {
     return (
         <div className="SearchBar-a">
             <div className="SearchName">
@@ -11,4 +13,13 @@ function SearchList() {
     )
 }
 
-export default SearchList
+const mapStateToProps = state => {
+    return ({
+        search: {
+            name: state.search.name,
+            country: state.search.country
+        }
+    })
+}
+
+export default connect(mapStateToProps, {})(SearchList)
