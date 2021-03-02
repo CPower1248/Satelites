@@ -1,14 +1,49 @@
+import { setState } from "react"
 import { connect } from "react-redux"
 
+import { getSatList_name } from "../../store/actions/listActions"
+
 function SearchList({ name, country }) {
+    const handleChange = (e) => {
+        setState({
+            [e.target.name]: e.target.value
+        })
+        console.log("NAME: ", name, "COUNTRY: ", country)
+    }
+
+    const handleSubmit_name = (e) => {
+        e.preventDefault()
+        getSatList_name()
+        // resetSearch() // Build helper to reset search values
+    }
+
+    // handleSubmit_country() // Build submit for search by country
+    const handleSubmit_country = (e) => {
+        e.preventDefault()
+
+        // !!!!! ===> START HERE <=== !!!!!
+        
+        // resetSearch() // Build helper to reset search values
+    }
+
     return (
         <div className="SearchBar-a">
-            <div className="SearchName">
-                <input id="name" name="name" placeholder="Get a list of satellites by name" />
-            </div>
-            <div className="SearchCountry">
-                <input id="country" name="country" placeholder="Get a list of satellites by country" />
-            </div>
+            <form className="SearchName" onSubmit={handleSubmit_name} >
+                <input 
+                    name="name" 
+                    value={name} 
+                    onChange={handleChange} 
+                    placeholder="Get a list of satellites by name" 
+                />
+            </form>
+            <form className="SearchCountry" onSubmit={handleSubmit_country} >
+                <input 
+                    name="country" 
+                    value={country} 
+                    onChange={handleChange} 
+                    placeholder="Get a list of satellites by country" 
+                />
+            </form>
         </div>
     )
 }
@@ -22,4 +57,4 @@ const mapStateToProps = state => {
     })
 }
 
-export default connect(mapStateToProps, {})(SearchList)
+export default connect(mapStateToProps, { getSatList_name })(SearchList)
