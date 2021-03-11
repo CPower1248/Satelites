@@ -13,7 +13,8 @@ export const initialState = {
         number: "",
         name: "",
         country: ""
-    }
+    },
+    hereFromReducer: ""
 }
 
 export const reducer = (state = initialState, action) => {
@@ -61,7 +62,11 @@ export const reducer = (state = initialState, action) => {
             return ({
                 ...state,
                 isFetchingList: true,
-                errorList: ""
+                errorList: "",
+                search: {
+                    ...state.search,
+                    name: action.payload
+                }
             })
         case list_a.GET_SATLIST_NAME_SUCCESS:
             return ({
@@ -75,7 +80,31 @@ export const reducer = (state = initialState, action) => {
                 isFetchingList: false,
                 errorList: action.payload
             })
-
+        case list_a.GET_SATLIST_COUNTRY_START:
+            return ({
+                ...state,
+                hereFromReducer: "hereFromReducer_start",
+                isFetchingList: true,
+                errorList: "",
+                search: {
+                    ...state.search,
+                    country: action.payload
+                }
+            })
+        case list_a.GET_SATLIST_COUNTRY_SUCCESS:
+            return ({
+                ...state,
+                hereFromReducer: "hereFromReducer_success",
+                isFetchingList: false,
+                satList: action.payload
+            })
+        case list_a.GET_SATLIST_COUNTRY_FAILURE:
+            return ({
+                ...state,
+                hereFromReducer: "hereFromReducer_failure",
+                isFetchingList: false,
+                errorList: action.payload
+            })
         // default
         default: return state
     }

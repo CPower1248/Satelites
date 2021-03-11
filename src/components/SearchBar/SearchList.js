@@ -1,27 +1,34 @@
-import { setState } from "react"
+import { useState } from "react"
 import { connect } from "react-redux"
 
-import { getSatList_name } from "../../store/actions/listActions"
+import { getSatList_name, getSatList_country } from "../../store/actions/listActions"
 
-function SearchList({ name, country }) {
+const initialUserInput = {
+    name: "",
+    country: ""
+}
+
+function SearchList({ name, country, getSatList_name, getSatList_country }) {
+    const [userInput, setUserInput] = useState(initialUserInput)
+    
     const handleChange = (e) => {
-        setState({
+        setUserInput({
+            ...userInput,
             [e.target.name]: e.target.value
         })
-        console.log("NAME: ", name, "COUNTRY: ", country)
     }
 
     const handleSubmit_name = (e) => {
         e.preventDefault()
-        getSatList_name()
-        // resetSearch() // Build helper to reset search values
+        console.log("HERE FROM SEARCHBAR")
+        getSatList_name(userInput.name)
+        setUserInput({name: "", country: ""})
     }
 
-    // handleSubmit_country() // Build submit for search by country
     const handleSubmit_country = (e) => {
         e.preventDefault()
-
-        // !!!!! ===> START HERE <=== !!!!!
+        getSatList_country(userInput.country)
+        setUserInput({name: "", country: ""})
         
         // resetSearch() // Build helper to reset search values
     }
@@ -31,18 +38,20 @@ function SearchList({ name, country }) {
             <form className="SearchName" onSubmit={handleSubmit_name} >
                 <input 
                     name="name" 
-                    value={name} 
+                    value={userInput.name} 
                     onChange={handleChange} 
                     placeholder="Get a list of satellites by name" 
                 />
+                <button>Search Name</button>
             </form>
             <form className="SearchCountry" onSubmit={handleSubmit_country} >
                 <input 
                     name="country" 
-                    value={country} 
+                    value={userInput.country} 
                     onChange={handleChange} 
                     placeholder="Get a list of satellites by country" 
                 />
+                <button>Search Country</button>
             </form>
         </div>
     )
@@ -57,4 +66,4 @@ const mapStateToProps = state => {
     })
 }
 
-export default connect(mapStateToProps, { getSatList_name })(SearchList)
+export default connect(mapStateToProps, { getSatList_name, getSatList_country })(SearchList)
