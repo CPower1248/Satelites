@@ -5,6 +5,8 @@ require("dotenv").config()
 const API_KEY = process.env.REACT_APP_API_KEY
 const state = store.getState() // =====> IS THIS WORKING??? <=====
 
+
+// finish writing reducers
 export const ListRequests = {
     list_byName: {
       method: 'GET',
