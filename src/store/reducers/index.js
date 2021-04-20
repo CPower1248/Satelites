@@ -1,11 +1,6 @@
-import { 
-    FETCH_SATLIST_START,
-    FETCH_SATLIST_SUCCESS,
-    FETCH_SATLIST_FAILURE,
-    FETCH_SATBYNUMBER_START,
-    FETCH_SATBYNUMBER_SUCCESS,
-    FETCH_SATBYNUMBER_FAILURE
-} from "../actions"
+import * as initial_a from "../actions/index"
+
+import * as list_a from "../actions/listActions"
 
 export const initialState = {
     satList: [],
@@ -18,49 +13,102 @@ export const initialState = {
         number: "",
         name: "",
         country: ""
-    }
+    },
+    hereFromReducer: ""
 }
 
+const requests = {}
+console.log(requests)
+
 export const reducer = (state = initialState, action) => {
-    switch(action.type) {
-        case FETCH_SATLIST_START:
+    switch(action.type) { // [Optimize] Separate reducers
+        // initial_a
+        case initial_a.FETCH_SATLIST_START:
             return ({
                 ...state,
-                
                 isFetchingList: true,
                 errorList: ""
             })
-        case FETCH_SATLIST_SUCCESS:
+        case initial_a.FETCH_SATLIST_SUCCESS:
             return ({
                 ...state,
                 isFetchingList: false,
                 satList: action.payload
             })
-        case FETCH_SATLIST_FAILURE:
+        case initial_a.FETCH_SATLIST_FAILURE:
             return ({
                 ...state,
                 isFetchingList: false,
                 errorList: action.payload
             })
-        case FETCH_SATBYNUMBER_START:
+        case initial_a.FETCH_SATBYNUMBER_START:
             return ({
                 ...state,
                 isFetchingCard: true,
                 errorCard: ""
             })
-        case FETCH_SATBYNUMBER_SUCCESS:
+        case initial_a.FETCH_SATBYNUMBER_SUCCESS:
             return ({
                 ...state,
                 isFetchingCard: false,
                 satCard: action.payload
             })
-        case FETCH_SATBYNUMBER_FAILURE:
+        case initial_a.FETCH_SATBYNUMBER_FAILURE:
             return ({
                 ...state,
                 isFetchingCard: false,
                 errorCard: action.payload
-            })        
-        default:
-            return state
+            })
+        
+        // list_actions
+        case list_a.GET_SATLIST_NAME_START:
+            return ({
+                ...state,
+                isFetchingList: true,
+                errorList: "",
+                search: {
+                    ...state.search,
+                    name: action.payload
+                }
+            })
+        case list_a.GET_SATLIST_NAME_SUCCESS:
+            return ({
+                ...state,
+                isFetchingList: false,
+                satList: action.payload
+            })
+        case list_a.GET_SATLIST_NAME_FAILURE:
+            return ({
+                ...state,
+                isFetchingList: false,
+                errorList: action.payload
+            })
+        case list_a.GET_SATLIST_COUNTRY_START:
+            return ({
+                ...state,
+                hereFromReducer: "hereFromReducer_start",
+                isFetchingList: true,
+                errorList: "",
+                search: {
+                    ...state.search,
+                    country: action.payload
+                }
+            })
+        case list_a.GET_SATLIST_COUNTRY_SUCCESS:
+            return ({
+                ...state,
+                hereFromReducer: "hereFromReducer_success",
+                isFetchingList: false,
+                satList: action.payload
+            })
+        case list_a.GET_SATLIST_COUNTRY_FAILURE:
+            return ({
+                ...state,
+                hereFromReducer: "hereFromReducer_failure",
+                isFetchingList: false,
+                errorList: action.payload
+            })
+        // default
+        default: return state
     }
 }

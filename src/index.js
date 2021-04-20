@@ -11,7 +11,7 @@ import { BrowserRouter as Router } from "react-router-dom"
 
 import App from './App';
 
-const store = createStore(reducer, applyMiddleware(thunk, logger))
+export const store = createStore(reducer, applyMiddleware(thunk, logger))
 
 ReactDOM.render(
   <React.StrictMode>
