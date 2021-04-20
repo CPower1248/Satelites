@@ -17,6 +17,9 @@ export const initialState = {
     hereFromReducer: ""
 }
 
+const requests = {}
+console.log(requests)
+
 export const reducer = (state = initialState, action) => {
     switch(action.type) { // [Optimize] Separate reducers
         // initial_a
