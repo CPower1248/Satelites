@@ -2,6 +2,9 @@ import * as initial_a from "../actions/index"
 
 import * as list_a from "../actions/listActions"
 
+require("dotenv").config()
+const API_KEY = process.env.REACT_APP_API_KEY
+
 export const initialState = {
     satList: [],
     isFetchingList: false,
@@ -16,9 +19,6 @@ export const initialState = {
     },
     hereFromReducer: ""
 }
-
-const requests = {}
-console.log(requests)
 
 export const reducer = (state = initialState, action) => {
     switch(action.type) { // [Optimize] Separate reducers
