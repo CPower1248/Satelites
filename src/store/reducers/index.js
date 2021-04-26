@@ -2,6 +2,11 @@ import * as initial_a from "../actions/index"
 
 import * as list_a from "../actions/listActions"
 
+
+// Use .env for API_KEY
+require("dotenv").config()
+const API_KEY = process.env.REACT_APP_API_KEY
+
 export const initialState = {
     satList: [],
     isFetchingList: false,
@@ -17,8 +22,25 @@ export const initialState = {
     hereFromReducer: ""
 }
 
-const requests = {}
-console.log(requests)
+const requests = {
+    satList: {
+        method: 'GET',
+        url: 'https://uphere-space1.p.rapidapi.com/satellite/list',
+        params: {page: '1'},
+        headers: {
+          'x-rapidapi-key': API_KEY,
+          'x-rapidapi-host': 'uphere-space1.p.rapidapi.com'
+        }
+    },
+    satByNumber: {
+        method: 'GET',
+        url: `https://uphere-space1.p.rapidapi.com/satellite/25544/details`,
+        headers: {
+          'x-rapidapi-key': API_KEY,
+          'x-rapidapi-host': 'uphere-space1.p.rapidapi.com'
+        }
+    }
+}
 
 export const reducer = (state = initialState, action) => {
     switch(action.type) { // [Optimize] Separate reducers
