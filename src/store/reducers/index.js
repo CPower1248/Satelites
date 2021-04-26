@@ -2,6 +2,8 @@ import * as initial_a from "../actions/index"
 
 import * as list_a from "../actions/listActions"
 
+
+// Use .env for API_KEY
 require("dotenv").config()
 const API_KEY = process.env.REACT_APP_API_KEY
 
