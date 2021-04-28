@@ -44,7 +44,7 @@ const requests = {
 }
 
 export const reducer = (state = initialState, action) => {
-    switch(action.type) { // [Optimize] Separate reducers
+    switch(action.type) {
         // initial_a
         case initial_a.FETCH_SATLIST_START:
             return ({
