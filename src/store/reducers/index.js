@@ -22,7 +22,7 @@ export const initialState = {
     hereFromReducer: ""
 }
 
-// Do these work? Must use current state
+// Do these work?
 const requests = {
     satList: {
         method: 'GET',
